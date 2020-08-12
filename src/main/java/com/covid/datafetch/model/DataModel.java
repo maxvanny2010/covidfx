@@ -26,6 +26,14 @@ public class DataModel {
         this.countryData = countryData;
     }
 
+    public GlobalData getGlobalData() {
+        return globalData;
+    }
+
+    public CountryData getCountryData() {
+        return countryData;
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", DataModel.class.getSimpleName() + "[", "]")

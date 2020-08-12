@@ -41,9 +41,6 @@ public class Launch extends Application {
         secondaryStage.show();
         final DataModel model = new DataProviderService().getData("Germany");
         System.out.println(model);
-        final Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
-        secondaryStage.setX(visualBounds.getMaxX() - 25 - scene.getWidth());
-        secondaryStage.setY(visualBounds.getMinY() + 25);
 
         scene.setOnMousePressed(event -> {
             this.xOffset = secondaryStage.getX() - event.getScreenX();
