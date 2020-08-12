@@ -2,11 +2,14 @@ package com.covid;
 
 
 import com.covid.datafetch.DataProviderService;
+import com.covid.datafetch.model.DataModel;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * Launch.
@@ -17,10 +20,13 @@ import javafx.stage.Stage;
  */
 public class Launch extends Application {
     @Override
-    public void start(final Stage primaryStage) {
-        final Scene scene = new Scene(new StackPane(new Label("JavaFX")), 200, 200);
+    public void start(final Stage primaryStage) throws IOException {
+        final Parent root = FXMLLoader.load(getClass().getResource("/widget.fxml"));
+
+        final Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-        new DataProviderService().getData("Ukraine");
+        final DataModel model = new DataProviderService().getData("Germany");
+        System.out.println(model);
     }
 }
