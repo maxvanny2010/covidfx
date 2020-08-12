@@ -39,8 +39,6 @@ public class Launch extends Application {
         final Scene scene = new Scene(root);
         secondaryStage.setScene(scene);
         secondaryStage.show();
-        final DataModel model = new DataProviderService().getData("Germany");
-        System.out.println(model);
 
         scene.setOnMousePressed(event -> {
             this.xOffset = secondaryStage.getX() - event.getScreenX();

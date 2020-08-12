@@ -16,3 +16,14 @@
 .country-title {
     -fx-font-size: 14pt;
 }
+
+.context-menu {
+    -fx-fill: white;
+    -fx-font-size: 12pt;
+    -fx-background-color: derive(-fx-base, 40%)
+}
+
+.menu-item:focused {
+    -fx-background-color: #b0d9ff;
+    -fx-fill: dimgrey;
+}
