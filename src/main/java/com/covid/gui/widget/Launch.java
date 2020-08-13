@@ -1,14 +1,10 @@
-package com.covid;
+package com.covid.gui.widget;
 
 
-import com.covid.datafetch.DataProviderService;
-import com.covid.datafetch.model.DataModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -24,6 +20,10 @@ import java.io.IOException;
 public class Launch extends Application {
     private double xOffset;
     private double yOffset;
+
+    public static void main(final String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(final Stage primaryStage) throws IOException {
