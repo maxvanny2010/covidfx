@@ -2,7 +2,6 @@ package com.covid.datafetch;
 
 import com.covid.datafetch.model.CountryData;
 import com.covid.datafetch.model.GlobalData;
-import com.google.gson.JsonObject;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -19,5 +18,5 @@ public interface CovidAPI {
     Call<GlobalData> getGlobalData();
 
     @GET("http://coronavirus-19-api.herokuapp.com/countries/{countryName}")
-    Call<CountryData> getGlobalData(@Path(value = "countryName") final String countryName);
+    Call<CountryData> getCountryData(@Path(value = "countryName") final String countryName);
 }

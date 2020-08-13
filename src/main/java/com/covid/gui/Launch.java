@@ -1,4 +1,4 @@
-package com.covid.gui.widget;
+package com.covid.gui;
 
 
 import javafx.application.Application;
@@ -27,7 +27,7 @@ public class Launch extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws IOException {
-        System.err.close();
+       // System.err.close();
 
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setOpacity(0);
@@ -37,7 +37,8 @@ public class Launch extends Application {
         secondaryStage.initStyle(StageStyle.UNDECORATED);
         secondaryStage.initOwner(primaryStage);
 
-        final Parent root = FXMLLoader.load(getClass().getResource("/widget.fxml"));
+        final Parent root = FXMLLoader.load(getClass()
+                .getResource("/com/covid/gui/widget/widget.fxml"));
         final Scene scene = new Scene(root);
         secondaryStage.setScene(scene);
         secondaryStage.show();

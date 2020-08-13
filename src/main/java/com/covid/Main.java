@@ -1,4 +1,6 @@
-package com.covid.gui.widget;
+package com.covid;
+
+import com.covid.gui.Launch;
 
 /**
  * Main.

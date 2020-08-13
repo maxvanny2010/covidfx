@@ -37,7 +37,7 @@ public class WidgetController implements Initializable {
     @FXML
     public AnchorPane rootPane;
     @FXML
-    public Text textGlobalRecord, textCountryCode, textCountryReport;
+    public Text textGlobalReport, textCountryCode, textCountryReport;
 
     @Override
     public void initialize(final URL location, final ResourceBundle resources) {
@@ -63,15 +63,13 @@ public class WidgetController implements Initializable {
         System.out.println("Refreshing data");
         final DataProviderService provider = new DataProviderService();
         final DataModel data = provider.getData(this.configModel.getCountryName());
-        Platform.runLater(() -> {
-            inflateData(data);
-        });
+        Platform.runLater(() -> inflateData(data));
 
     }
 
     private void inflateData(final DataModel model) {
         final GlobalData globalData = model.getGlobalData();
-        this.textGlobalRecord.setText(
+        this.textGlobalReport.setText(
                 this.getFormattedData(
                         globalData.getCases(), globalData.getRecovered(), globalData.getDeaths()
                 )

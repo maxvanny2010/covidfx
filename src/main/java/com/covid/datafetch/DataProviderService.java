@@ -41,7 +41,7 @@ public class DataProviderService {
                     }
                 });
         CompletableFuture<CountryData> callback2 = new CompletableFuture<>();
-        api.getGlobalData(countryName)
+        api.getCountryData(countryName)
                 .enqueue(new Callback<>() {
                     @Override
                     public void onResponse(final Call<CountryData> call,
