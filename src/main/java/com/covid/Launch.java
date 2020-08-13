@@ -27,6 +27,8 @@ public class Launch extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws IOException {
+        System.err.close();
+
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.setOpacity(0);
         primaryStage.show();

@@ -18,18 +18,20 @@ import java.io.Writer;
  * @since 8/12/2020
  */
 public class ConfigurationService {
-    private final File SETTING_FILE;
+    private File SETTING_FILE;
     private final Gson gson = new GsonBuilder().create();
 
-    {
-        final String file = this.getClass().getResource("/settings.json").getFile();
-        SETTING_FILE = new File(file);
+    public ConfigurationService() throws IOException {
+        try {
+            final String file = this.getClass().getResource("/settings.json").getPath();
+            SETTING_FILE = new File(file);
+        } catch (Exception e) {
+            this.createSettingFile();
+        }
+
     }
 
     public ConfigModel getConfiguration() throws Exception {
-        if (!SETTING_FILE.exists()) {
-            this.createSettingFile();
-        }
         return this.getConfigurationFromFile();
     }
 
@@ -41,6 +43,7 @@ public class ConfigurationService {
 
     private void createSettingFile() throws IOException {
         final ConfigModel configModel = new ConfigModel();
+        SETTING_FILE = new File("../resources/settings.json");
         try (final Writer writer = new FileWriter(SETTING_FILE, false)) {
             this.gson.toJson(configModel, writer);
         }
