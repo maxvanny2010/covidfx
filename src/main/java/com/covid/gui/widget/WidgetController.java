@@ -32,12 +32,12 @@ import java.util.concurrent.TimeUnit;
  * @since 8/12/2020
  */
 public class WidgetController implements Initializable {
-    private ScheduledExecutorService service;
-    private ConfigModel configModel;
     @FXML
     public AnchorPane rootPane;
     @FXML
     public Text textGlobalReport, textCountryCode, textCountryReport;
+    private ScheduledExecutorService service;
+    private ConfigModel configModel;
 
     @Override
     public void initialize(final URL location, final ResourceBundle resources) {

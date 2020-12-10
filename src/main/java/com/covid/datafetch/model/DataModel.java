@@ -13,14 +13,6 @@ public class DataModel {
     private GlobalData globalData;
     private CountryData countryData;
 
-    public void setGlobalData(final GlobalData globalData) {
-        this.globalData = globalData;
-    }
-
-    public void setCountryData(final CountryData countryData) {
-        this.countryData = countryData;
-    }
-
     public DataModel(final GlobalData globalData, final CountryData countryData) {
         this.globalData = globalData;
         this.countryData = countryData;
@@ -30,8 +22,16 @@ public class DataModel {
         return globalData;
     }
 
+    public void setGlobalData(final GlobalData globalData) {
+        this.globalData = globalData;
+    }
+
     public CountryData getCountryData() {
         return countryData;
+    }
+
+    public void setCountryData(final CountryData countryData) {
+        this.countryData = countryData;
     }
 
     @Override
